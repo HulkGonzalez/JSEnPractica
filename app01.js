@@ -4,9 +4,9 @@ const nombre = document.getElementById ( "nombre" );
 const asunto = document.getElementById ( "asunto" );
 const mensaje = document.getElementById ( "mensaje" );
 
-const errorNombre = document.querySelector ( ".errorNombre" );
-const errorAsunto = document.querySelector ( ".errorAsunto" );
-const errorMensaje = document.querySelector ( ".errorMensaje" );
+const errorNombre = document.querySelector ( ".nombre__error" );
+const errorAsunto = document.querySelector ( ".asunto__error" );
+const errorMensaje = document.querySelector ( ".mensaje__error" );
 const resultado = document.querySelector ( ".resultado" );
 
 //Damos un evento al formulario
@@ -30,7 +30,7 @@ formulario.addEventListener ( "submit" , (e) => {
   }
 
   //Parametros
-  const regExpLetras = /[a-zA-Z]\w+/gi;
+  const regExpLetras = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(?: [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)*$/;
 
   //Respuesta segun parametro
   if ( !regExpLetras.test ( nombre.value ) ) {
